@@ -1,5 +1,7 @@
 package com.favtuts.demo.sbstarter.entities;
 
+import org.hibernate.envers.Audited;
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
@@ -7,6 +9,7 @@ import java.util.UUID;
 
 @Entity
 @Table(name = "vehicle")
+@Audited
 public class Vehicle {
 
     @Id
