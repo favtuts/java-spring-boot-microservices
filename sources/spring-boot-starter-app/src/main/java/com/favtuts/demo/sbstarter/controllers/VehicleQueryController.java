@@ -2,6 +2,7 @@ package com.favtuts.demo.sbstarter.controllers;
 
 import com.favtuts.demo.sbstarter.dto.VehicleQueryDTO;
 import com.favtuts.demo.sbstarter.services.VehicleQueryService;
+import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -13,6 +14,7 @@ import java.util.UUID;
 
 @RestController
 @RequestMapping(value = "api/vehicles")
+@Api(tags = "Vehicle Queries", value = "VehicleQueries", description = "Controller for Vehicle Queries")
 public class VehicleQueryController {
 
     @Autowired

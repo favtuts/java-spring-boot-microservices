@@ -4,6 +4,7 @@ import com.favtuts.demo.sbstarter.dto.VehicleCreateDTO;
 import com.favtuts.demo.sbstarter.dto.VehicleQueryDTO;
 import com.favtuts.demo.sbstarter.dto.VehicleUpdateDTO;
 import com.favtuts.demo.sbstarter.services.VehicleCommandService;
+import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -15,6 +16,7 @@ import java.util.UUID;
 
 @RestController
 @RequestMapping(value = "/api/vehicles")
+@Api(tags = "Vehicle Commands", value = "VehicleCommands", description = "Controller for Vehicle Commands")
 public class VehicleCommandController {
 
     @Autowired
