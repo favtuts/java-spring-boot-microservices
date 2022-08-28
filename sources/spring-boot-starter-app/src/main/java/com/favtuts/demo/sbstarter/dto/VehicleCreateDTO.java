@@ -3,19 +3,20 @@ package com.favtuts.demo.sbstarter.dto;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 public class VehicleCreateDTO {
 
     @NotNull
-    @Min(8)
+    @Size(min = 8, message = "Vehicle Registration Number should have at least 8 characters")
     private String vehicleIdentityNumber;
 
     @NotNull
-    @Max(10)
+    @Size(max = 10, message = "Make of Vehicle cannot have more than 10 characters")
     private String make;
 
     @NotNull
-    @Max(10)
+    @Size(max = 10, message = "Model of Vehicle cannot have more than 10 characters")
     private String model;
 
     public String getVehicleIdentityNumber() {
