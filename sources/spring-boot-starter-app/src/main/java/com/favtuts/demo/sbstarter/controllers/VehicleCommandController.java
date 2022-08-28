@@ -29,7 +29,7 @@ public class VehicleCommandController {
     @PutMapping(value = "{id}", produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseStatus(HttpStatus.OK)
     public ResponseEntity<VehicleQueryDTO> updateVehicle(@PathVariable(value = "id") UUID id,
-                                                         @RequestBody VehicleUpdateDTO vehicleUpdateDTO) {
+                                                         @Valid @RequestBody VehicleUpdateDTO vehicleUpdateDTO) {
         return new ResponseEntity<>(vehicleCommandService.updateVehicle(id, vehicleUpdateDTO), HttpStatus.OK);
     }
 }
