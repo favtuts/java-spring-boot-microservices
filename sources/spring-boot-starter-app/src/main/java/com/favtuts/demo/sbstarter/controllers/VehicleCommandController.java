@@ -10,6 +10,7 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.UUID;
 
 @RestController
@@ -21,14 +22,14 @@ public class VehicleCommandController {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public ResponseEntity<UUID> createVehicle(@RequestBody VehicleCreateDTO vehicleCreateDTO) {
+    public ResponseEntity<UUID> createVehicle(@Valid @RequestBody VehicleCreateDTO vehicleCreateDTO) {
         return new ResponseEntity<>(vehicleCommandService.createVehicle(vehicleCreateDTO), HttpStatus.CREATED);
     }
 
     @PutMapping(value = "{id}", produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseStatus(HttpStatus.OK)
     public ResponseEntity<VehicleQueryDTO> updateVehicle(@PathVariable(value = "id") UUID id,
-                                                         @RequestBody VehicleUpdateDTO vehicleUpdateDTO) {
+                                                         @Valid @RequestBody VehicleUpdateDTO vehicleUpdateDTO) {
         return new ResponseEntity<>(vehicleCommandService.updateVehicle(id, vehicleUpdateDTO), HttpStatus.OK);
     }
 }
