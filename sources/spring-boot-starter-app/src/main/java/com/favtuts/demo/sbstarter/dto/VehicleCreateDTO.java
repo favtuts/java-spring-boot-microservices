@@ -1,11 +1,21 @@
 package com.favtuts.demo.sbstarter.dto;
 
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
+
 public class VehicleCreateDTO {
 
+    @NotNull
+    @Min(8)
     private String vehicleIdentityNumber;
 
+    @NotNull
+    @Max(10)
     private String make;
 
+    @NotNull
+    @Max(10)
     private String model;
 
     public String getVehicleIdentityNumber() {
