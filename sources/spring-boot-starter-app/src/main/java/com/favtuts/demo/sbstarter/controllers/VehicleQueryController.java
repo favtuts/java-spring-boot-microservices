@@ -21,7 +21,7 @@ public class VehicleQueryController {
     @Autowired
     private VehicleQueryService vehicleQueryService;
 
-    @GetMapping
+    @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseStatus(HttpStatus.OK)
     @ApiOperation(value = "List all vehicles")
     public ResponseEntity<List<VehicleQueryDTO>> listAllVehicles() {
